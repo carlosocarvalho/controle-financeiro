@@ -1,6 +1,7 @@
 import React from "react";
-
+import { ThemeContext } from 'styled-components';
 import { Entypo } from "@expo/vector-icons";
+
 import {
   Wrapper,
   Header,
@@ -24,11 +25,13 @@ import Target from "../../components/Target";
 const avatar = require("../../images/avatar.png");
 
 export default function Home() {
+  const theme = React.useContext(ThemeContext)
+  console.log(theme)
   const [visible, setVisible] = React.useState(true);
   const toggleVisible = () => setVisible((prev) => !prev);
   return (
     <Wrapper>
-      <Header  colors={["#1ad275", "#05b55a"]}>
+      <Header  colors={theme.header.background}>
         <HeaderContainer>
           <UserContainer>
             <AvatarContainer>

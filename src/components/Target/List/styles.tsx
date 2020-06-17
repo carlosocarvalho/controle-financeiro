@@ -9,7 +9,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
   font-size: 18px;
   font-weight: bold;
-  color: #555;
+  color: ${({theme}) => theme.card.light.title};
 `;
 
 export const HeaderContainer = styled.View`
@@ -19,12 +19,13 @@ export const HeaderContainer = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   align-items: center;
   justify-content: center;
-  border-radius: 18px;
-  background: #14c96b;
+  border-radius: 17px;
+ 
+  background: ${({theme}) => theme.button.secondary.background};
 `;
 
 export const TargetContainer = styled.View``;
@@ -44,19 +45,19 @@ export const TargetBarContainer = styled.View`
 
 export const TargetBar = styled.View`
   height: 10px;
-  background: #178bd8;
+  background: ${({theme}) => theme.button.secondary.background};
   border-radius: 2px;
   width: ${({width}) => width && width > 0 ? width + '%': 0 }
 `;
 export const Label = styled.Text`
   font-size: 14px;
   font-weight: bold;
-  color: #444;
+  color: ${({theme}) => theme.card.light.subTitle};
 `;
 export const Value = styled.Text`
   font-size: 12px;
 
-  color: #444;
+  color: ${({theme}) => theme.card.light.subTitle};
 `;
 export const TargetWrapper = styled.View`
 margin-top: 15px;

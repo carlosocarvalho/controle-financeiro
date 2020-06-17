@@ -1,6 +1,6 @@
 
-import List from './List';
-import Form  from './Form' 
+import List from './List/';
+import Form  from './Form/' 
 
 
 export default {

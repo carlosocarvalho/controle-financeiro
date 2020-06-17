@@ -5,6 +5,8 @@ import {
   Ionicons,
   MaterialCommunityIcons as Icon,
 } from "@expo/vector-icons";
+import { ThemeContext } from 'styled-components'
+
 
 import Home from "./screens/Home";
 import Cast from "./screens/Cast";
@@ -66,8 +68,15 @@ const screens = [
   },
 ];
 export default function Navigation() {
+  const theme  = React.useContext(ThemeContext)
   return (
     <Tab.Navigator
+    initialRouteName="Cast"
+    tabBarOptions={{
+      
+      activeTintColor: theme.primary,
+      inactiveTintColor: theme.light 
+  }}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size, focused }) => {
           if (route.name === "CreateCast") return (

@@ -8,12 +8,12 @@ export const HeaderContainer = styled.SafeAreaView`
 
 export const Header = styled(LinearGradient)`
   height: 200px;
-  background: #14c96b;
+ 
 `;
 export const Balance = styled.Text`
   font-size: 28px;
   font-weight: 200;
-  color: #fff;
+  color: ${ props => props.theme.header.color};
 `;
 
 export const BalanceWrapper = styled.View`
@@ -32,13 +32,13 @@ export const BalanceContainer = styled.View`
 `;
 
 export const BalanceTitle = styled.Text`
- font-weight: bold;
- color: #fff;
+ font-weight: ${ props => props.theme.header.title};
+ color: ${ props => props.theme.header.color};
  
 `;
 export const Bold = styled.Text`
   font-size: 35px;
-  font-weight: bold;
+  font-weight:  ${ props => props.theme.header.title};
  
 `;
 

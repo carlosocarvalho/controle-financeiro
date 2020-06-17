@@ -1,7 +1,9 @@
 import React from "react";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import { ThemeContext } from 'styled-components'
 import { MaterialCommunityIcons as Icon, Entypo} from "@expo/vector-icons";
 import { Button, Label, BubbleIcon } from "./styles";
+
 
 type ButtonProps = {
   onPress?: any;
@@ -9,9 +11,10 @@ type ButtonProps = {
 };
 
 const ButtonCast: React.FC<ButtonProps> = ({ onPress }) => {
+  const theme  = React.useContext(ThemeContext)
   return (
     <TouchableWithoutFeedback onPress={onPress}>
-      <Button colors={["#14c96b", "#05b55a"]}>
+      <Button colors={theme.header.background}>
         
         <BubbleIcon>
           <Entypo color="#fff" size={15} name="plus" />

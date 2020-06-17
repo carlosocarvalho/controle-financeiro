@@ -8,6 +8,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
   font-size: 18px;
   font-weight: bold;
+  color: ${({theme}) => theme.card.light.title};
 `;
 
 export const HeaderContainer = styled.View`
@@ -17,12 +18,12 @@ export const HeaderContainer = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-  width: 35px;
-  height: 35px;
+  width: 34px;
+  height: 34px;
   align-items: center;
   justify-content: center;
   border-radius: 17px;
-  background: #14c96b;
+  background: ${({theme}) => theme.button.secondary.background};
 `;
 
 export const AccountContainer = styled.View`
@@ -41,16 +42,17 @@ export const AccountLogo = styled.View`
 export const AccountBalance = styled.Text`
   font-size: 14px;
   font-weight: bold;
-  color: #0c8e4b;
+  color: ${({theme}) => theme.card.light.title};
 `;
 
 export const AccountTitle = styled.Text`
   font-size: 16px;
   font-weight: bold;
+  color: ${({theme}) => theme.card.light.title};
 `;
 export const AccountType = styled.Text`
   font-size: 12px;
-  color: #888;
+  color: ${({theme}) => theme.card.light.subTitle};
 `;
 export const AccountWrapper = styled.TouchableOpacity`
   flex-direction: row;

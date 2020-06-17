@@ -54,17 +54,18 @@ export const Bold = styled.Text`
 
 export const Button = styled.TouchableOpacity`
   margin-top: 20px;
-  background: ${({ primary }) => (primary ? "#14c96b" : "#fff")};
+  background: ${({ primary, theme }) => (primary ? theme.button.primary.background : theme.button.primaryOutline.background )};
   height: 50px;
   width: 150px;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  border: 1px solid ${({ primary }) => (primary ? "#fff" : "#14c96b")};
+  
+  border: ${({ primary, theme }) => (primary ? theme.button.primary.border : theme.button.primaryOutline.border )};
 `;
 
 export const ButtonLabel = styled.Text`
   font-size: 16px;
   font-weight: bold;
-  color: ${({ primary }) => (primary ? "#fff" : "#14c96b")};
+  color: ${({ primary, theme }) => (primary ? theme.button.primary.color : theme.button.primaryOutline.color )};
 `;

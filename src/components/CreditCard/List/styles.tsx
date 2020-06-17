@@ -9,7 +9,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
   font-size: 18px;
   font-weight: bold;
-  color: #0c8e4b;
+  color: ${({theme}) => theme.card.light.title};
 `;
 
 export const HeaderContainer = styled.View`
@@ -19,12 +19,13 @@ export const HeaderContainer = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   align-items: center;
   justify-content: center;
-  border-radius: 18px;
-  background: #14c96b;
+  border-radius: 17px;
+
+  background: ${({theme}) => theme.button.primary.background};
 `;
 
 export const CreditCardContainer = styled.View`
@@ -43,7 +44,7 @@ export const CreditCardLogo = styled.View`
 export const CreditCardBalance = styled.Text`
   font-size: 14px;
   font-weight: bold;
-  color: #0c8e4b;
+  color: ${({theme}) => theme.card.light.title};
 `;
 
 export const CreditCardTitle = styled.Text`
@@ -52,7 +53,7 @@ export const CreditCardTitle = styled.Text`
 `;
 export const CreditCardType = styled.Text`
   font-size: 12px;
-  color: #888;
+  color: ${({theme}) => theme.card.light.subTitle};
   font-weight: bold;
 `;
 export const CreditCardWrapper = styled.TouchableOpacity`
@@ -78,12 +79,12 @@ export const BalanceContainer = styled.View`
 export const BalanceLimitContainer = styled.View``;
 export const Label = styled.Text`
   font-size: 12px;
-  color: #888;
+  color: ${({theme}) => theme.card.light.subTitle};
   font-weight: bold;
 `;
 export const Value = styled.Text`
   font-size: 14px;
-  color: #444;
+  color: ${({theme}) => theme.card.light.title};
   font-weight: bold;
   margin-top: 5px;
 `;
