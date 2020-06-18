@@ -26,7 +26,6 @@ const avatar = require("../../images/avatar.png");
 
 export default function Home() {
   const theme = React.useContext(ThemeContext)
-  console.log(theme)
   const [visible, setVisible] = React.useState(true);
   const toggleVisible = () => setVisible((prev) => !prev);
   return (

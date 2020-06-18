@@ -6,7 +6,7 @@ import {
   MaterialCommunityIcons as Icon,
 } from "@expo/vector-icons";
 import { ThemeContext } from 'styled-components'
-
+import Modal from "react-native-modal";
 
 import Home from "./screens/Home";
 import Cast from "./screens/Cast";
@@ -71,7 +71,7 @@ export default function Navigation() {
   const theme  = React.useContext(ThemeContext)
   return (
     <Tab.Navigator
-    initialRouteName="Cast"
+    initialRouteName="CreateCast"
     tabBarOptions={{
       
       activeTintColor: theme.primary,

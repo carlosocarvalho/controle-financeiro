@@ -3,15 +3,19 @@ const colors = {
     primary: '#2B1E55',
     white: '#fff',
     secondary: '#2EBBAB',
-    light: '#99A0AD'
+    light: '#99A0AD',
+    text: '#474C75',
+    gray: '#e7e7e7',
+    primary900: 'rgba(252,252,252, 0.2)'
 }
 
 
 const theme = {
 
-    text: colors.primary,
+    text: colors.text,
     primary: colors.primary,
     light: colors.light,
+    primary900: colors.primary900,
     header: {
         background: ["#2B1E55", "#191035"],
         color: '#fff',

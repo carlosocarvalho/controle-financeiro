@@ -6,15 +6,27 @@ import { ThemeProvider } from "styled-components";
 
 import theme from "./themes/default";
 
+import ModalFormContext from "./contexts/ModalFormContext";
+import CastModal from "./components/CastModal";
+import { useModalForm } from "./hooks/ModalFormHook";
+
 export default function () {
+  const p = useModalForm()
   return (
-    <ThemeProvider theme={theme}>
-      <React.Fragment>
-        <StatusBar backgroundColor={theme.primary} barStyle="light-content" />
-        <NavigationContainer>
-          <Navigation />
-        </NavigationContainer>
-      </React.Fragment>
-    </ThemeProvider>
+    <ModalFormContext.Provider value={p}>
+      <ThemeProvider theme={theme}>
+        <React.Fragment>
+          <StatusBar backgroundColor={theme.primary} barStyle="light-content" />
+          <NavigationContainer>
+            <Navigation />
+           
+          </NavigationContainer>
+
+        </React.Fragment>
+        
+      </ThemeProvider>
+
+     
+    </ModalFormContext.Provider>
   );
 }
