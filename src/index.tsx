@@ -1,7 +1,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import Navigation from "./navigation";
-import { StatusBar } from "react-native";
+import { StatusBar, Platform } from "react-native";
 import { ThemeProvider } from "styled-components";
 
 import theme from "./themes/default";
@@ -14,7 +14,7 @@ export default function () {
   const p = useModalForm()
   return (
     <ModalFormContext.Provider value={p}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={{...theme, plaform: Platform.OS}}>
         <React.Fragment>
           <StatusBar backgroundColor={theme.primary} barStyle="light-content" />
           <NavigationContainer>
