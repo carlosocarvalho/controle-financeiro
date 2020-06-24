@@ -8,6 +8,17 @@ const colors = {
   primary900: "rgba(252,252,252, 0.2)",
 };
 
+const sizes = {
+  small: "12px",
+  normal: "14px",
+  medium: "16px",
+  large: "18px",
+  extraLarge: "20px",
+  big: "26px",
+  extraBig: "40px",
+  spacing: "16px",
+};
+
 const theme = {
   text: colors.text,
   primary: colors.primary,
@@ -15,21 +26,12 @@ const theme = {
   primary900: colors.primary900,
   sizes: {
     spacing: "16px",
-    text: {
-      small: "12px",
-      normal: "14px",
-      medium: "16px",
-      large: "18px",
-      extraLarge: "20px",
-      big: "26px",
-      extraBig: "40px",
-    },
+    text: sizes,
   },
   form: {
     input: {
       borderColor: colors.gray,
       color: colors.text,
-      
     },
     label: {
       borderColor: colors.light,
@@ -62,6 +64,30 @@ const theme = {
     light: {
       title: colors.primary,
       subTitle: colors.light,
+    },
+  },
+
+  bankAccount: {
+    modal: {
+      title: {
+        size: sizes.large,
+        color: colors.text,
+      },
+      item: {
+        padding: `${sizes.spacing}`,
+        borderColor: colors.gray,
+        title: {
+          size: sizes.medium,
+          color: colors.primary,
+        },
+        label: {
+          size: sizes.normal,
+          color: colors.light,
+        },
+        icon: {
+          background: colors.gray
+        }
+      },
     },
   },
 };
