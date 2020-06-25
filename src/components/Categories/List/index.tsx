@@ -18,7 +18,37 @@ import {
   CategorieContent,
 } from "./styles";
 
+
+import Item from "../Item";
+import  Icon from '../../Icons'
 type ListProps = {};
+
+const items = [
+  {
+    title: "Educacao",
+    icon: Icon.Education
+  },
+  {
+    title: "Transporte",
+    icon: Icon.Transport
+  },
+  {
+    title: "Saude",
+    icon: Icon.Heart
+  },
+  {
+    title: "Viagens",
+    icon: Icon.Travel
+  },
+  {
+    title: "Supermercado",
+    icon: Icon.Shop
+  },
+  {
+    title: "Outros",
+    icon: Icon.More
+  },
+];
 
 const Categorie: React.FC = () => {
   const theme = React.useContext(ThemeContext);
@@ -45,7 +75,16 @@ const Categorie: React.FC = () => {
                 </ButtonSearchSearch>
               </CategorieHeaderContainer>
             </CategorieHeader>
-            <CategorieContent></CategorieContent>
+            <CategorieContent>
+               {
+                  items.map( row => (
+                    <Item  
+                    key={String(Math.random())}
+                    Icon={row.icon}
+                    title={row.title}/>
+                  ) )
+               }
+            </CategorieContent>
           </CategorieContainer>
         </Modal>
       )}

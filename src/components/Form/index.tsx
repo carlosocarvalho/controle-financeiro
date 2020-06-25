@@ -5,7 +5,7 @@ export const Group = styled.View``;
 export const GroupTouch = styled.TouchableOpacity``;
 
 export const Label = styled.Text`
-  /* padding: 0 ${({ theme }) => theme.sizes.spacing} ; */
+  
    padding-top: ${({ theme }) => theme.sizes.spacing} ;
    padding-left: ${({ theme }) => theme.sizes.spacing} ;
    padding-right: ${({ theme }) => theme.sizes.spacing} ;

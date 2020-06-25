@@ -9,24 +9,26 @@ import theme from "./themes/default";
 import ModalFormContext from "./contexts/ModalFormContext";
 import CastModal from "./components/CastModal";
 import { useModalForm } from "./hooks/ModalFormHook";
-
+import { CashProvider } from "./components/CastModal/Context";
+import Cast from "./screens/Cast";
 export default function () {
-  const p = useModalForm()
+  const p = useModalForm();
   return (
     <ModalFormContext.Provider value={p}>
-      <ThemeProvider theme={{...theme, plaform: Platform.OS}}>
-        <React.Fragment>
-          <StatusBar backgroundColor={theme.primary} barStyle="light-content" />
-          <NavigationContainer>
-            <Navigation />
-           
-          </NavigationContainer>
-
-        </React.Fragment>
-        
+      <ThemeProvider theme={{ ...theme, plaform: Platform.OS }}>
+        <CashProvider>
+          <React.Fragment>
+            <StatusBar
+              backgroundColor={theme.primary}
+              barStyle="light-content"
+            />
+            <NavigationContainer>
+              <Navigation />
+            </NavigationContainer>
+            <Cast.Form />
+          </React.Fragment>
+        </CashProvider>
       </ThemeProvider>
-
-     
     </ModalFormContext.Provider>
   );
 }

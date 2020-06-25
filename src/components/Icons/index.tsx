@@ -1,10 +1,21 @@
 import Bank from './Bank'
 import CreditCard from  './CreditCard'
 import Cash from  './Cash'
-
+import Education from './Education'
+import Travel from './Travel'
+import Transport from './Transport'
+import Heart from './Heart'
+import More from './More'
+import Shop from './Shop'
 
 export default {
     Bank,
     CreditCard,
-    Cash
+    Cash,
+    Shop,
+    Heart,
+    Transport,
+    Travel,
+    Education,
+    More,
 }

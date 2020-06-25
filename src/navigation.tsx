@@ -5,7 +5,7 @@ import {
   Ionicons,
   MaterialCommunityIcons as Icon,
 } from "@expo/vector-icons";
-import { ThemeContext } from 'styled-components'
+import { ThemeContext } from "styled-components";
 import Modal from "react-native-modal";
 
 import Home from "./screens/Home";
@@ -68,21 +68,25 @@ const screens = [
   },
 ];
 export default function Navigation() {
-  const theme  = React.useContext(ThemeContext)
+  const theme = React.useContext(ThemeContext);
   return (
     <Tab.Navigator
-    initialRouteName="CreateCast"
-    tabBarOptions={{
-      
-      activeTintColor: theme.primary,
-      inactiveTintColor: theme.light 
-  }}
+      initialRouteName="Home"
+      tabBarOptions={{
+        activeTintColor: theme.primary,
+        inactiveTintColor: theme.light,
+      }}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size, focused }) => {
-          if (route.name === "CreateCast") return (
-            <CastButton />
-          );
-
+          if (route.name === "CreateCast") {
+            return (
+              <CastButton
+                onPress={() => {
+                  return null;
+                }}
+              />
+            );
+          }
           const { lib: Icon, name } = icons[route.name];
           return <Icon name={name} size={size} color={color} />;
         },
@@ -93,6 +97,11 @@ export default function Navigation() {
           key={screen.key}
           name={screen.name}
           component={screen.component}
+          listeners={({ navigation, route }) => ({
+            tabPress: (e) => {
+              if (route.name === "CreateCast") e.preventDefault();
+            },
+          })}
           options={{
             title: screen.title,
           }}

@@ -5,7 +5,8 @@ const colors = {
   light: "#99A0AD",
   text: "#474C75",
   gray: "#e7e7e7",
-  primary900: "rgba(252,252,252, 0.2)",
+  primary900: "#dbd1ff",
+  danger: 'red'
 };
 
 const sizes = {
@@ -21,9 +22,12 @@ const sizes = {
 
 const theme = {
   text: colors.text,
+  secondary: colors.secondary,
+  white: colors.white,
   primary: colors.primary,
   light: colors.light,
   primary900: colors.primary900,
+  danger: colors.danger,
   sizes: {
     spacing: "16px",
     text: sizes,

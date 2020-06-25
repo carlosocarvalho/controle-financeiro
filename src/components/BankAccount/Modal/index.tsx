@@ -55,8 +55,7 @@ const BankAccount: React.FC = () => {
   const { handlerToggleModalBankAccount, handleSetSelected } = React.useContext(
     Context
   );
-  const [selected, setSelected] = React.useState<string | null>(null);
-
+  
   return (
     <Context.Consumer>
       {({ show }) => (

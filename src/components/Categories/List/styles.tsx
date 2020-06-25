@@ -2,13 +2,12 @@ import styled from "styled-components/native";
 
 export const CategorieContainer = styled.View`
   flex: 1;
-  align-items: flex-end;
-  justify-content: flex-end;
+  margin-top: ${({ theme }) => theme.sizes.spacing};
   background: #fff;
 `;
 export const CategorieContent = styled.ScrollView`
   flex: 1;
-  background: #fff;
+ 
 `;
 
 export const CategorieHeader = styled.View`
