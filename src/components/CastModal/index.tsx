@@ -50,7 +50,9 @@ import { CashContext } from "./Context";
 import Keyboard from "../Keyboard";
 import { KeyboardContext } from "../Keyboard/Context";
 import moment from "moment";
- 
+import { RecurrentContext } from "../Recurrent/Context";
+import Recurrent from "../Recurrent/List";
+
 type FormData = {
   date?: string | null;
   description?: string | null;
@@ -74,16 +76,21 @@ export default function () {
 
   const { handleToggleCash } = React.useContext(CashContext);
   const { handleToggleShow, value } = React.useContext(KeyboardContext);
+  const { handleToggleRecurrent, recurrent } = React.useContext(
+    RecurrentContext
+  );
 
   const [form, setForm] = React.useState<FormData>({ type: TYPE_CAST_INPUT });
   const [image, setImage] = React.useState(null);
   const [optionType, setOptionType] = React.useState(TYPE_CAST_INPUT);
-  // React.useEffect(() => {
-  //   setOptionType(form.type || TYPE_CAST_INPUT );
-  // }, [form]);
+
   React.useEffect(() => {
     if (selected !== null) setForm({ ...form, ...{ account: selected.title } });
   }, [selected]);
+
+  React.useEffect(() => {
+    if (recurrent !== null) setForm({ ...form, ...{ recurrent } });
+  }, [recurrent]);
 
   React.useEffect(() => {
     if (value !== null) setForm({ ...form, value });
@@ -161,7 +168,7 @@ export default function () {
         <F.TouchInput
           label="Data"
           onPress={CalendarContext.handleToggleCalendar}
-          value={!!form.date && moment(form.date).format('DD/MM/yyyy')}  
+          value={!!form.date && moment(form.date).format("DD/MM/yyyy")}
           icon={{
             lib: MaterialCommunityIcons,
             name: "calendar-month-outline",
@@ -185,6 +192,17 @@ export default function () {
           icon={{
             lib: MaterialCommunityIcons,
             name: "briefcase-account-outline",
+            size: 24,
+          }}
+        />
+
+        <F.TouchInput
+          label="Recorrente"
+          onPress={handleToggleRecurrent}
+          value={!!form.recurrent && form.recurrent}
+          icon={{
+            lib: MaterialCommunityIcons,
+            name: "calendar-repeat-outline",
             size: 24,
           }}
         />
@@ -215,6 +233,7 @@ export default function () {
       <Categories.List />
       <BankAccount.Modal />
       <Keyboard.Render />
+      <Recurrent />
       <ActionsContainer>
         <ButtonSave>
           <Octicons name="check" size={24} color="white" />

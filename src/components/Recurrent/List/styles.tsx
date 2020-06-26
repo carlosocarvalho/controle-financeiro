@@ -7,11 +7,15 @@ export const Container = styled.View`
 `;
 export const Content = styled.ScrollView`
   flex: 1;
+  margin:0px;
+  padding-top: 20px;
 `;
 
 export const Header = styled.View`
-  height: ${({ theme }) => theme.header.categorie.list.height};
+  height: ${({theme}) => theme.header.recurrent.list.height};
   width: 100%;
+  
+  margin:0px;
 `;
 
 export const HeaderContainer = styled.SafeAreaView`
@@ -21,7 +25,8 @@ export const HeaderContainer = styled.SafeAreaView`
   padding: ${({ theme }) => theme.sizes.spacing};
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  
+ 
 `;
 
 export const HeaderTitle = styled.Text`

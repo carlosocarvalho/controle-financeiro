@@ -11,6 +11,7 @@ import { BankAccountProvider } from "../../../components/BankAccount/Context";
 import { CashContext } from "../../../components/CastModal/Context";
 import { Wrapper } from "./styles";
 import { KeyboardProvider } from "../../../components/Keyboard/Context";
+import { RecurrentProvider } from "../../../components/Recurrent/Context";
 
 const { width } = Dimensions.get("screen");
 
@@ -36,7 +37,9 @@ export default function () {
                 <CalendarProvider>
                   <BankAccountProvider>
                     <KeyboardProvider>
-                      <CastModal />
+                      <RecurrentProvider>
+                        <CastModal />
+                      </RecurrentProvider>
                     </KeyboardProvider>
                   </BankAccountProvider>
                 </CalendarProvider>

@@ -8,7 +8,7 @@ interface CashContextProps {
 export const CashContext = React.createContext({} as CashContextProps);
 
 export const CashProvider: React.FC = ({ children }) => {
-  const [show, setShow] = React.useState(false);
+  const [show, setShow] = React.useState(true);
   const [selected, setSelected] = React.useState<string | null>(null);
 
   function handleToggleCash() {

@@ -9,44 +9,43 @@ const { width, height } = Dimensions.get("screen");
 import { CategorieContext } from "../Context";
 
 import {
-  CategorieContainer,
+  Container,
   ButtonBackClose,
-  CategorieHeaderContainer,
-  CategorieHeader,
-  CategorieHeaderTitle,
+  HeaderContainer,
+  Header,
+  HeaderTitle,
   ButtonSearchSearch,
-  CategorieContent,
+  Content,
 } from "./styles";
 
-
 import Item from "../Item";
-import  Icon from '../../Icons'
+import Icon from "../../Icons";
 type ListProps = {};
 
 const items = [
   {
     title: "Educacao",
-    icon: Icon.Education
+    icon: Icon.Education,
   },
   {
     title: "Transporte",
-    icon: Icon.Transport
+    icon: Icon.Transport,
   },
   {
     title: "Saude",
-    icon: Icon.Heart
+    icon: Icon.Heart,
   },
   {
     title: "Viagens",
-    icon: Icon.Travel
+    icon: Icon.Travel,
   },
   {
     title: "Supermercado",
-    icon: Icon.Shop
+    icon: Icon.Shop,
   },
   {
     title: "Outros",
-    icon: Icon.More
+    icon: Icon.More,
   },
 ];
 
@@ -58,9 +57,9 @@ const Categorie: React.FC = () => {
     <CategorieContext.Consumer>
       {({ show }) => (
         <Modal style={{ margin: 0 }} deviceWidth={width} isVisible={show}>
-          <CategorieContainer>
-            <CategorieHeader>
-              <CategorieHeaderContainer>
+          <Container>
+            <Header>
+              <HeaderContainer>
                 <ButtonBackClose onPress={toggleShow}>
                   <Ionicons
                     name="ios-arrow-back"
@@ -69,23 +68,22 @@ const Categorie: React.FC = () => {
                   />
                 </ButtonBackClose>
 
-                <CategorieHeaderTitle>Categorias</CategorieHeaderTitle>
+                <HeaderTitle>Categorias</HeaderTitle>
                 <ButtonSearchSearch>
                   <Feather name="search" color={theme.header.color} size={24} />
                 </ButtonSearchSearch>
-              </CategorieHeaderContainer>
-            </CategorieHeader>
-            <CategorieContent>
-               {
-                  items.map( row => (
-                    <Item  
-                    key={String(Math.random())}
-                    Icon={row.icon}
-                    title={row.title}/>
-                  ) )
-               }
-            </CategorieContent>
-          </CategorieContainer>
+              </HeaderContainer>
+            </Header>
+            <Content>
+              {items.map((row) => (
+                <Item
+                  key={String(Math.random())}
+                  Icon={row.icon}
+                  title={row.title}
+                />
+              ))}
+            </Content>
+          </Container>
         </Modal>
       )}
     </CategorieContext.Consumer>

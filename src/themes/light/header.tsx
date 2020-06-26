@@ -9,9 +9,19 @@ export default {
       height: "130px",
     },
 
-    home:{
-      height: "155px"
-    }
+    home: {
+      height: "155px",
+    },
+    recurrent: {
+      list: {
+        height: "50px",
+      },
+    },
+    categorie: {
+      list: {
+        height: "55px",
+      },
+    },
   },
   ios: {
     background: ["#2B1E55", "#191035"],
@@ -20,8 +30,18 @@ export default {
     cast: {
       height: "160px",
     },
-    home:{
-      height: "200px"
-    }
+    home: {
+      height: "200px",
+    },
+    categorie: {
+      list: {
+        height: "100px",
+      },
+    },
+    recurrent: {
+      list: {
+        height: "100px",
+      },
+    },
   },
 };

@@ -14,8 +14,8 @@ export const KeyboardContext = React.createContext({} as KeyboardContract);
 export const KeyboardProvider: React.FC = ({ children }) => {
   const [show, setShow] = React.useState<boolean>(false);
 
-  const [value, setValue] = React.useState<string>('2000');
-  const [defaultValue, setDefaultValue] = React.useState<string | null | number>('20000');
+  const [value, setValue] = React.useState<string>('000');
+  const [defaultValue, setDefaultValue] = React.useState<string | null | number>('');
   function handleToggleShow(s?: boolean) {
     setShow(s || false);
   }

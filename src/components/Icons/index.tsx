@@ -7,6 +7,8 @@ import Transport from './Transport'
 import Heart from './Heart'
 import More from './More'
 import Shop from './Shop'
+import Calendar from './Calendar'
+
 
 export default {
     Bank,
@@ -18,4 +20,5 @@ export default {
     Travel,
     Education,
     More,
+    Calendar,
 }
