@@ -1,10 +1,12 @@
 import colors from "./colors";
+import sizes from "./sizes";
 
 export default {
   android: {
     background: ["#2B1E55", "#191035"],
     color: colors.white,
     title: "bold",
+    titleSize: `${sizes.android.large}px`,
     cast: {
       height: "130px",
     },
@@ -22,11 +24,17 @@ export default {
         height: "55px",
       },
     },
+    screen: {
+      resume: {
+        height: "60px",
+      }
+    }
   },
   ios: {
     background: ["#2B1E55", "#191035"],
     color: colors.white,
     title: "bold",
+    titleSize: `${sizes.ios.large}px`,
     cast: {
       height: "160px",
     },
@@ -43,5 +51,10 @@ export default {
         height: "100px",
       },
     },
+    screen: {
+      resume: {
+        height: "90px",
+      }
+    }
   },
 };

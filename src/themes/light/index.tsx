@@ -8,6 +8,7 @@ import form from "./form";
 
 export default {
   android: {
+    rawSizes: sizes.android ,
     ...colors,
     ...{ header: header.android },
     button,
@@ -32,6 +33,7 @@ export default {
   },
 
   ios: {
+    rawSizes: sizes.ios ,
     ...colors,
     ...{ header: header.ios },
     button,
