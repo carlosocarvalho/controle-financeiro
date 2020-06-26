@@ -10,6 +10,7 @@ import { CalendarProvider } from "../../../components/Calendar/Context";
 import { BankAccountProvider } from "../../../components/BankAccount/Context";
 import { CashContext } from "../../../components/CastModal/Context";
 import { Wrapper } from "./styles";
+import { KeyboardProvider } from "../../../components/Keyboard/Context";
 
 const { width } = Dimensions.get("screen");
 
@@ -34,7 +35,9 @@ export default function () {
               <CategorieProvider>
                 <CalendarProvider>
                   <BankAccountProvider>
-                    <CastModal />
+                    <KeyboardProvider>
+                      <CastModal />
+                    </KeyboardProvider>
                   </BankAccountProvider>
                 </CalendarProvider>
               </CategorieProvider>

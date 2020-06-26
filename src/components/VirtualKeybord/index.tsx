@@ -4,6 +4,7 @@ import { Text, View, TouchableOpacity, Image } from "react-native";
 
 import styles from "./styles";
 import * as Keyboard from "./styles";
+import { KeyboardContext } from "../Keyboard/Context";
 
 type VirtualKeyboardProps = {
   pressMode?: string;
@@ -28,14 +29,11 @@ const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({
   decimal,
   style,
   onPress,
-  defaultValue,
 }) => {
-  const [text, setText] = React.useState("");
+  const [text, setText] = React.useState<string | null>("");
+  const { value } = React.useContext(KeyboardContext);
   React.useEffect(() => {
-    if (defaultValue !== null) {
-      setText(defaultValue);
-      
-    }
+    setText(value);
   }, []);
   function Backspace() {
     return (

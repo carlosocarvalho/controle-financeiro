@@ -29,6 +29,11 @@ import {
   ButtonSave,
   ActionsContainer,
   ButtonCancel,
+  VisorTouch,
+  OptionContainer,
+  OptionType,
+  OptionLabel,
+  OptionActive,
 } from "./styles";
 
 const { width, height } = Dimensions.get("screen");
@@ -42,13 +47,20 @@ import { BankAccountContext } from "../BankAccount/Context";
 import BankAccount from "../BankAccount";
 import { hasOnPressDown } from "../../helpers/EventHelper";
 import { CashContext } from "./Context";
-
+import Keyboard from "../Keyboard";
+import { KeyboardContext } from "../Keyboard/Context";
+import moment from "moment";
+ 
 type FormData = {
   date?: string | null;
   description?: string | null;
   categorie?: string | null;
   account?: string | null;
+  value?: string | null;
+  type?: string | null;
 };
+const TYPE_CAST_INPUT = "receita";
+const TYPE_CAST_OUTPUT = "despesa";
 
 export default function () {
   const theme = React.useContext(ThemeContext);
@@ -61,15 +73,21 @@ export default function () {
   );
 
   const { handleToggleCash } = React.useContext(CashContext);
+  const { handleToggleShow, value } = React.useContext(KeyboardContext);
 
-  const [visorText, setVisorText] = React.useState(formatMoney("100"));
-  const [visibleKeyBoard, setVisibleKeyBoard] = React.useState(false);
-  const [form, setForm] = React.useState<FormData>({});
+  const [form, setForm] = React.useState<FormData>({ type: TYPE_CAST_INPUT });
   const [image, setImage] = React.useState(null);
-
+  const [optionType, setOptionType] = React.useState(TYPE_CAST_INPUT);
+  // React.useEffect(() => {
+  //   setOptionType(form.type || TYPE_CAST_INPUT );
+  // }, [form]);
   React.useEffect(() => {
     if (selected !== null) setForm({ ...form, ...{ account: selected.title } });
   }, [selected]);
+
+  React.useEffect(() => {
+    if (value !== null) setForm({ ...form, value });
+  }, [value]);
 
   React.useEffect(() => {
     if (CategorieContext.selected !== null)
@@ -77,7 +95,7 @@ export default function () {
   }, [CategorieContext.selected]);
 
   React.useEffect(() => {
-    if (CategorieContext.selected !== null)
+    if (CalendarContext.selected !== null)
       setForm({ ...form, ...{ date: CalendarContext.selected } });
   }, [CalendarContext.selected]);
 
@@ -103,9 +121,6 @@ export default function () {
       aspect: [4, 3],
       quality: 1,
     });
-
-    console.log(result);
-
     if (!result.cancelled) {
       setImage(result.uri);
     }
@@ -115,14 +130,29 @@ export default function () {
     <>
       <Header>
         <HeaderContent>
+          <OptionContainer>
+            <OptionType onPress={() => setOptionType(TYPE_CAST_INPUT)}>
+              <OptionActive
+                backgroundColor={
+                  optionType == TYPE_CAST_INPUT ? "#fff" : "transparent"
+                }
+              />
+
+              <OptionLabel>Receita</OptionLabel>
+            </OptionType>
+            <OptionType onPress={() => setOptionType(TYPE_CAST_OUTPUT)}>
+              <OptionActive
+                backgroundColor={
+                  optionType == TYPE_CAST_OUTPUT ? "#fff" : "transparent"
+                }
+              />
+              <OptionLabel>Despesa</OptionLabel>
+            </OptionType>
+          </OptionContainer>
           <Visor>
-            <TouchableWithoutFeedback
-              onPress={() => {
-                setVisibleKeyBoard(true);
-              }}
-            >
-              <VisorText>{visorText}</VisorText>
-            </TouchableWithoutFeedback>
+            <VisorTouch onPress={() => handleToggleShow(true)}>
+              <VisorText>{!!form.value && formatMoney(form.value)}</VisorText>
+            </VisorTouch>
           </Visor>
         </HeaderContent>
       </Header>
@@ -131,7 +161,7 @@ export default function () {
         <F.TouchInput
           label="Data"
           onPress={CalendarContext.handleToggleCalendar}
-          value={!!form.date && form.date}
+          value={!!form.date && moment(form.date).format('DD/MM/yyyy')}  
           icon={{
             lib: MaterialCommunityIcons,
             name: "calendar-month-outline",
@@ -184,41 +214,7 @@ export default function () {
       <Calendar.List />
       <Categories.List />
       <BankAccount.Modal />
-
-      <Modal
-        style={{
-          marginRight: 0,
-          marginLeft: 0,
-          marginBottom: 0,
-          marginTop: 0,
-        }}
-        deviceWidth={width}
-        isVisible={visibleKeyBoard}
-        backdropOpacity={0}
-      >
-        <CalendarContainer>
-          <KeyboardBackdrop
-            onPressOut={({ touchHistory }) => {
-              if (hasOnPressDown(touchHistory)) setVisibleKeyBoard((s) => !s);
-            }}
-          ></KeyboardBackdrop>
-          <KeyboardContent
-            screenHeight={Platform.OS === "ios" ? height - 150 : height - 170}
-          >
-            <ButtonCloseKeyBoard
-              onPress={() => setVisibleKeyBoard((s) => !s)}
-            />
-            <VirtualKeyboard
-              defaultValue={100}
-              color={theme.primary}
-              pressMode="string"
-              onPress={(val) => {
-                setVisorText(formatMoney(Number(val)));
-              }}
-            />
-          </KeyboardContent>
-        </CalendarContainer>
-      </Modal>
+      <Keyboard.Render />
       <ActionsContainer>
         <ButtonSave>
           <Octicons name="check" size={24} color="white" />
