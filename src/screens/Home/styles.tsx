@@ -7,7 +7,7 @@ export const HeaderContainer = styled.SafeAreaView`
 `;
 
 export const Header = styled(LinearGradient)`
-  height: 200px;
+  height: ${ ({theme}) => theme.header.home.height}
  
 `;
 export const Balance = styled.Text`
