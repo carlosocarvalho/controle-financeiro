@@ -44,10 +44,8 @@ const Render: React.FC = () => {
           backdropOpacity={0}
         >
           <Container>
-            <Backdrop onPressOut={({ touchHistory }) => {}}></Backdrop>
-            <Content
-              screenHeight={Platform.OS === "ios" ? height - 150 : height - 170}
-            >
+            <Backdrop></Backdrop>
+            <Content>
               <ButtonCloseKeyBoard onPress={() => handleToggleShow(false)} />
               <VirtualKeyboard
                 defaultValue={defaultValue}

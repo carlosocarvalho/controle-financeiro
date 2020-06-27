@@ -9,6 +9,8 @@ export default {
     titleSize: `${sizes.android.large}px`,
     cast: {
       height: "130px",
+      rawHeight: 160,
+      componentList: '60px'
     },
 
     home: {
@@ -37,6 +39,9 @@ export default {
     titleSize: `${sizes.ios.large}px`,
     cast: {
       height: "160px",
+      rawHeight: 160,
+      componentList: '100px',
+     
     },
     home: {
       height: "200px",

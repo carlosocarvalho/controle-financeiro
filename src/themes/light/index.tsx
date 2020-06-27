@@ -5,15 +5,17 @@ import card from "./card";
 import bankAccount from "./bankAccount";
 import sizes from "./sizes";
 import form from "./form";
+import keyboard from "./keyboard";
+import cast from "./cast";
 
 export default {
   android: {
-    rawSizes: sizes.android ,
+    rawSizes: sizes.android,
     ...colors,
     ...{ header: header.android },
     button,
     card,
-    ...{form: form.android},
+    ...{ form: form.android },
     ...{ bankAccount: bankAccount.android },
     ...{
       sizes: {
@@ -30,15 +32,17 @@ export default {
         },
       },
     },
+    ...{ keyboard: keyboard.android },
+    ...{ cast: cast.android },
   },
 
   ios: {
-    rawSizes: sizes.ios ,
+    rawSizes: sizes.ios,
     ...colors,
     ...{ header: header.ios },
     button,
     card,
-    ...{form: form.ios},
+    ...{ form: form.ios },
     ...{ bankAccount: bankAccount.ios },
     ...{
       sizes: {
@@ -55,5 +59,8 @@ export default {
         },
       },
     },
+    ...{ keyboard: keyboard.ios },
+
+    ...{ cast: cast.ios },
   },
 };

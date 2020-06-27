@@ -9,7 +9,7 @@ import {
 } from "react-native-chart-kit";
 import { View, Dimensions } from "react-native";
 import { ThemeContext } from "styled-components";
-import { Title, Container, Wrapper, ContainerChart } from "./styles";
+import { Title, Container, Wrapper, ContainerChart, Label } from "./styles";
 
 import {
   VictoryBar,
@@ -19,15 +19,16 @@ import {
   VictoryPie,
 } from "victory-native";
 import { formatMoney } from "../../../helpers/MoneyFormat";
+import { CastContext } from "../../Cast/Context";
 
 const data = [
-  { x: 150000, y: 150000, label: "Receitas" },
-  { x: 20000, y: 20000, label: "Despesas" },
+  { x: 150000, y: 150000, label: 'Receitas' },
+  { x: 20000, y: 20000, label: 'Despesas' },
 ];
 
 const MonthChart = () => {
   const theme = React.useContext(ThemeContext);
-
+  const {  handleToggleCast }  = React.useContext(CastContext)
   return (
     <Wrapper>
       <Title>Resumo Mês</Title>
@@ -35,8 +36,15 @@ const MonthChart = () => {
         <ContainerChart>
           <VictoryPie
             padding={70}
-            colorScale={[theme.primary, theme.danger]}
+            colorScale={[theme.text, theme.danger]}
             data={data}
+            style={{
+              
+              labels: {
+                fontSize: 13,
+                fontWeight: 'bold'
+              },
+            }}
             events={[
               {
                 target: "data",
@@ -47,6 +55,7 @@ const MonthChart = () => {
                         target: "data",
                         mutation: (props) => {
                           console.log(props.datum);
+                          handleToggleCast()
                           //const fill = props.style && props.style.fill;
                           //return fill === "black" ? null : { style: { fill: "black" } };
                         },

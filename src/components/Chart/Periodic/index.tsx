@@ -27,11 +27,11 @@ const PeriodicChart = () => {
       <Title>Últimos 6 meses</Title>
       <Container>
         <VictoryChart
-          domainPadding={15}
+          domainPadding={18}
           width={Dimensions.get("window").width - theme.rawSizes.spacing * 2}
         >
           <VictoryBar
-            barWidth={30}
+            barWidth={35}
             style={{
               data: {
                 fill: theme.secondary,
@@ -61,13 +61,20 @@ const PeriodicChart = () => {
             ]}
           />
           <VictoryAxis 
+             style={{
+              axis: {stroke: theme.secondary},
+             }}
               dependentAxis
               tickFormat={(tick) => {
                   
                   return `${abbreviateNumber(tick/100)}`;
               }}
           />
-          <VictoryAxis/>
+          <VictoryAxis
+            style={{
+              axis: {stroke: theme.secondary},
+             }}
+          />
         </VictoryChart>
       </Container>
     </Wrapper>

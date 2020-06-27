@@ -22,14 +22,15 @@ export const Backdrop = styled.TouchableOpacity.attrs(() => ({
   activeOpacity: 1,
 }))`
   width: 100%;
-  flex: 1;
+  height: ${({ theme }) => theme.keyboard.backdrop.height};
 `;
 
 export const Content = styled.View`
   background-color: #fff;
   width: 100%;
   align-items: center;
-  height: ${({ screenHeight }) => screenHeight}px;
+  flex: 1;
+ 
 `;
 
 export const ButtonCloseKeyBoard = styled.TouchableOpacity`

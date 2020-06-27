@@ -13,7 +13,7 @@ export const HeaderContainer = styled.SafeAreaView`
   align-items: center;
 `;
 export const Header = styled(LinearGradient)`
-  height: ${({ ios }) => (ios ? "100px" : "60px")};
+  height: ${({ theme }) => theme.header.cast.componentList};
 `;
 
 export const HeaderTitle = styled.Text`

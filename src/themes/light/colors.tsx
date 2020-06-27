@@ -6,5 +6,5 @@ export default {
   text: "#474C75",
   gray: "#e7e7e7",
   primary900: "#dbd1ff",
-  danger: "red",
+  danger: "#FF6FA5",
 };

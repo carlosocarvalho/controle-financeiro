@@ -15,10 +15,11 @@ export const Container = styled.ScrollView.attrs({
   contentContainer: {
     alignItems: "center",
     justifyContent: "center",
-    flex: 1,
+    flex: 1
   },
 })`
   height: 100%;
+  background: #fff;
 `;
 
 export const Title = styled.Text`
