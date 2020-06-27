@@ -93,6 +93,7 @@ const expandGroup = (data: any) => {
 const Cast: React.FC = () => {
   const theme = React.useContext(ThemeContext);
   const { handleToggleCast } = React.useContext(CastContext);
+  
   const [data, setData] = React.useState<Array<any>>([]);
   const group = items.reduce((a: any, b: any) => {
     a[b.date] = [...(a[b.date] || []), b];
@@ -100,6 +101,11 @@ const Cast: React.FC = () => {
   }, {});
 
   React.useEffect(() => {
+    async function formHide(){
+      //handleToggleCastForm()
+    }
+    formHide();
+
     setData(expandGroup(group));
   }, []);
 
@@ -125,7 +131,6 @@ const Cast: React.FC = () => {
             </Header>
             <Content>
               <List data={!!data && data} />
-              <Detail />
             </Content>
           </Container>
         </Modal>

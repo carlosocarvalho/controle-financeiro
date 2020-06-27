@@ -31,7 +31,7 @@ export default function () {
                 <Navigation />
               </NavigationContainer>
               <ScreenCast.Form />
-              <Cast.Modal />
+              {/* <Cast.Modal /> */}
             </React.Fragment>
           </CastProvider>
         </CashProvider>

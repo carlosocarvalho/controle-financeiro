@@ -14,7 +14,6 @@ import Form from "../Form";
 const Detail = () => {
   const {
     current,
-    showDetail,
     handleToggleCastDetail,
     handleToggleCastForm,
   } = React.useContext(CastContext);
@@ -34,7 +33,6 @@ const Detail = () => {
               <Cash
                 onSelect={(data: any) => {
                   handleToggleCastForm();
-                  
                 }}
                 data={current}
               />

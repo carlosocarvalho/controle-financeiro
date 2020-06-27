@@ -14,6 +14,9 @@ export const CashProvider: React.FC = ({ children }) => {
   const [closed, setClose] = React.useState(false);
   const [selected, setSelected] = React.useState<string | null>(null);
 
+  React.useEffect(() => {
+    if (closed === true) setShow(false);
+  }, [closed, show]);
   function handleToggleCash(o?: boolean | undefined) {
     setShow((s) => (o == undefined ? !s : o));
     if (o === true) {
@@ -22,12 +25,12 @@ export const CashProvider: React.FC = ({ children }) => {
   }
 
   function onClose(o?: boolean | undefined) {
-    if (o !== undefined && o === true) {
-      setShow(false);
+    if (o === true) {
       setClose(true);
       setTimeout(() => {
-        setClose(false)
-      }, 3000)
+        setClose(false);
+      }, 2000);
+      return;
     }
   }
 

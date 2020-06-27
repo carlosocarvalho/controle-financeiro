@@ -71,7 +71,7 @@ export default function Navigation() {
   const theme = React.useContext(ThemeContext);
   return (
     <Tab.Navigator
-      initialRouteName="CastResume"
+      initialRouteName="Cast"
       tabBarOptions={{
         activeTintColor: theme.primary,
         inactiveTintColor: theme.light,

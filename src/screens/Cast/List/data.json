@@ -1,0 +1,68 @@
+[
+  {
+    "value": 1000.29,
+    "title": "Aluguel",
+    "date": "2020-10-10",
+    "account": "Conta Padrão",
+    "paid": true,
+    "type": "saida"
+  },
+  {
+    "value": 17.29,
+    "title": "Amazon Prime",
+    "date": "2020-10-12",
+    "account": "Carlos J. Carvalho",
+    "paid": true,
+    "type": "saida"
+  },
+  {
+    "value": 17.29,
+    "title": "Internet",
+    "date": "2020-10-12",
+    "account": "Conta Padrão",
+    "paid": false,
+    "type": "saida"
+  },
+
+  {
+    "value": 4000.00,
+    "title": "Receita App",
+    "date": "2020-10-17",
+    "account": "Conta Padrão",
+    "paid": true,
+    "type": "entrada"
+  },
+  {
+    "value": 1000.29,
+    "title": "Aluguel",
+    "date": "2020-10-10",
+    "account": "Conta Padrão",
+    "paid": true,
+    "type": "saida"
+  },
+  {
+    "value": 17.29,
+    "title": "Amazon Prime",
+    "date": "2020-10-12",
+    "account": "Carlos J. Carvalho",
+    "paid": true,
+    "type": "saida"
+  },
+  {
+    "value": 17.29,
+    "title": "Internet",
+    "date": "2020-10-12",
+    "account": "Conta Padrão",
+    "paid": false,
+    "type": "saida"
+  },
+
+  {
+    "value": 4000.00,
+    "title": "Receita App",
+    "date": "2020-10-17",
+    "account": "Conta Padrão",
+    "paid": true,
+    "type": "entrada"
+  }
+]

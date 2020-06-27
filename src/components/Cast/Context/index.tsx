@@ -10,7 +10,7 @@ interface CastContextProps {
   setCurrenCast(value: any): void;
   current?: object | null;
   showForm: boolean
-  handleToggleCastForm(): void;
+  handleToggleCastForm(o?: boolean | undefined): void;
 }
 
 export const CastContext = React.createContext({} as CastContextProps);
@@ -37,8 +37,8 @@ export const CastProvider: React.FC = ({ children }) => {
     setDetailShow((s) => !s);
   }
 
-  function  handleToggleCastForm() {
-    setForm((s) => !s);
+  function  handleToggleCastForm(o?: boolean | undefined) {
+    setForm((s) => o !== undefined ? o : !s);
   }
   return (
     <CastContext.Provider

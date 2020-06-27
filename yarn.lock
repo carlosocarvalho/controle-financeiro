@@ -5068,11 +5068,6 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-paths-js@^0.4.10:
-  version "0.4.10"
-  resolved "https://registry.yarnpkg.com/paths-js/-/paths-js-0.4.10.tgz#a3575f409b4a36f8aa795ba4d051989021be58c7"
-  integrity sha512-JZoqlRSHtx+bc+xKI9o4bropEbqZBF4ZfYImiB1T9RYpHB73h5I8XZ7FfSBbHbBMtdD1c04ujjAPH8wUuu4+Gw==
-
 pify@^2.0.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
@@ -5128,11 +5123,6 @@ pngjs@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-5.0.0.tgz#e79dd2b215767fd9c04561c01236df960bce7fbb"
   integrity sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==
-
-point-in-polygon@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/point-in-polygon/-/point-in-polygon-1.0.1.tgz#d59b64e8fee41c49458aac82b56718c5957b2af7"
-  integrity sha1-1Ztk6P7kHElFiqyCtWcYxZV7Kvc=
 
 posix-character-classes@^0.1.0:
   version "0.1.1"
@@ -5311,15 +5301,6 @@ react-native-calendars@^1.299.0:
     prop-types "^15.5.10"
     react-native-swipe-gestures "^1.0.5"
     xdate "^0.8.0"
-
-react-native-chart-kit@^5.6.1:
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/react-native-chart-kit/-/react-native-chart-kit-5.6.1.tgz#383c27dd70b02e22ba364207face16fbb7addd51"
-  integrity sha512-yqNdISbpR6MJ+d96X/vYbQP7ggjwcJmjVp82mwYepPmYKJMcjGop5hUrVrt7TUIh0yUrDgfcSN9ZGoDRWQdftQ==
-  dependencies:
-    lodash "^4.17.13"
-    paths-js "^0.4.10"
-    point-in-polygon "^1.0.1"
 
 react-native-gesture-handler@~1.6.0:
   version "1.6.1"
