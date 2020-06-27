@@ -7,12 +7,23 @@ export default {
         size: `${sizes.android.medium}px`,
       },
     },
+
+    footer: {
+      actions: {
+        height: "160px",
+      },
+    },
   },
   ios: {
     item: {
-        title: {
-          size: `${sizes.ios.medium}px`,
-        },
+      title: {
+        size: `${sizes.ios.medium}px`,
       },
+    },
+    footer: {
+      actions: {
+        height: "95px",
+      },
+    },
   },
 };

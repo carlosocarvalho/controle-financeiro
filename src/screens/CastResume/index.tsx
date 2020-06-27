@@ -7,7 +7,7 @@ import MonthChart from "../../components/Chart/Month";
 import PeriodicChart from "../../components/Chart/Periodic";
 
 import Cast from "../../components/Cast";
-import  from '../'
+
 // import { CashContext } from "../../components/CastModal/Context";
 
 export default function () {

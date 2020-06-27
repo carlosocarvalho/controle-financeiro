@@ -10,13 +10,17 @@ const { width } = Dimensions.get("screen");
 import Cash from "../../../ModalboxCash";
 import { hasOnPressDown } from "../../../../helpers/EventHelper";
 import Form from "../Form";
+import { CashContext } from "../../../CastModal/Context";
 
 const Detail = () => {
   const {
     current,
     handleToggleCastDetail,
-    handleToggleCastForm,
   } = React.useContext(CastContext);
+  const { handleToggleCash } = React.useContext(CashContext);
+  const handleToggleForm = () => {
+    handleToggleCash();
+  };
 
   return (
     <CastContext.Consumer>
@@ -32,7 +36,7 @@ const Detail = () => {
             <Content>
               <Cash
                 onSelect={(data: any) => {
-                  handleToggleCastForm();
+                  handleToggleForm();
                 }}
                 data={current}
               />

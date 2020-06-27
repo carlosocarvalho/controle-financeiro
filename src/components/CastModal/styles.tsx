@@ -1,6 +1,21 @@
 import styled from "styled-components/native";
-import { Dimensions } from "react-native";
-export const Container = styled.ScrollView``;
+
+export const Wrapper = styled.View`
+
+flex: 1;
+`
+
+export const Container = styled.ScrollView.attrs(() => ({
+  contentContainerStyle: {
+  
+    
+  },
+  contentContainer: {
+    paddingVertical: 20,
+    
+  }
+}))`
+`;
 
 type StyledProps = {
   props: any;
@@ -119,10 +134,17 @@ export const ButtonSave = styled.TouchableOpacity`
 `;
 
 export const ActionsContainer = styled.SafeAreaView`
+
+
+    height: ${({theme}) => theme.cast.footer.actions.height};
+  
+`;
+
+export const Actions = styled.View`
   align-items: center;
   padding: ${({ theme }) => theme.sizes.spacing};
   flex-direction: row;
-  justify-content: center;
+  justify-content: center;  
 `;
 
 export const ButtonCancel = styled.TouchableOpacity`
@@ -145,8 +167,8 @@ export const OptionContainer = styled.View`
   align-items: center;
 `;
 
-export const OptionType = styled.TouchableOpacity.attrs(() =>({
-  activeOpacity: .7
+export const OptionType = styled.TouchableOpacity.attrs(() => ({
+  activeOpacity: 0.7,
 }))`
   padding: ${({ theme }) => theme.sizes.spacing};
   padding-right: 10px;
@@ -162,6 +184,6 @@ export const OptionActive = styled.View`
   width: 8px;
   height: 8px;
   border-radius: 4px;
-  background: ${({  backgroundColor }) => backgroundColor};
+  background: ${({ backgroundColor }) => backgroundColor};
   margin-right: 10px;
 `;

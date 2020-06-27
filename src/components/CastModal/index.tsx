@@ -28,12 +28,14 @@ import {
   DocumentDownIcon,
   ButtonSave,
   ActionsContainer,
+  Actions,
   ButtonCancel,
   VisorTouch,
   OptionContainer,
   OptionType,
   OptionLabel,
   OptionActive,
+  Wrapper,
 } from "./styles";
 
 const { width, height } = Dimensions.get("screen");
@@ -74,7 +76,7 @@ export default function () {
     BankAccountContext
   );
 
-  const { handleToggleCash, onClose } = React.useContext(CashContext);
+  const { handleToggleCash } = React.useContext(CashContext);
   const { handleToggleShow, value } = React.useContext(KeyboardContext);
   const { handleToggleRecurrent, recurrent } = React.useContext(
     RecurrentContext
@@ -163,86 +165,96 @@ export default function () {
           </Visor>
         </HeaderContent>
       </Header>
-      <Container>
-        <F.Input label="Descricao" />
-        <F.TouchInput
-          label="Data"
-          onPress={CalendarContext.handleToggleCalendar}
-          value={!!form.date && moment(form.date).format("DD/MM/yyyy")}
-          icon={{
-            lib: MaterialCommunityIcons,
-            name: "calendar-month-outline",
-            size: 24,
-          }}
-        />
-        <F.TouchInput
-          label="Categoria"
-          onPress={CategorieContext.toggleShow}
-          value={!!form.categorie && form.categorie}
-          icon={{
-            lib: MaterialCommunityIcons,
-            name: "format-list-bulleted",
-            size: 24,
-          }}
-        />
-        <F.TouchInput
-          label="Conta de Pagamento"
-          onPress={handlerToggleModalBankAccount}
-          value={!!form.account && form.account}
-          icon={{
-            lib: MaterialCommunityIcons,
-            name: "briefcase-account-outline",
-            size: 24,
-          }}
-        />
+      <Wrapper>
+        <Container>
+          <F.Input label="Descricao" />
+          <F.TouchInput
+            label="Data"
+            onPress={CalendarContext.handleToggleCalendar}
+            value={!!form.date && moment(form.date).format("DD/MM/yyyy")}
+            icon={{
+              lib: MaterialCommunityIcons,
+              name: "calendar-month-outline",
+              size: 24,
+            }}
+          />
+          <F.TouchInput
+            label="Categoria"
+            onPress={CategorieContext.toggleShow}
+            value={!!form.categorie && form.categorie}
+            icon={{
+              lib: MaterialCommunityIcons,
+              name: "format-list-bulleted",
+              size: 24,
+            }}
+          />
+          <F.TouchInput
+            label="Conta de Pagamento"
+            onPress={handlerToggleModalBankAccount}
+            value={!!form.account && form.account}
+            icon={{
+              lib: MaterialCommunityIcons,
+              name: "briefcase-account-outline",
+              size: 24,
+            }}
+          />
 
-        <F.TouchInput
-          label="Recorrente"
-          onPress={handleToggleRecurrent}
-          value={!!form.recurrent && form.recurrent}
-          icon={{
-            lib: MaterialCommunityIcons,
-            name: "calendar-repeat-outline",
-            size: 24,
-          }}
-        />
+          <F.TouchInput
+            label="Recorrente"
+            onPress={handleToggleRecurrent}
+            value={!!form.recurrent && form.recurrent}
+            icon={{
+              lib: MaterialCommunityIcons,
+              name: "calendar-repeat-outline",
+              size: 24,
+            }}
+          />
 
-        <F.Input label="Observacao" numberOfLines={4} />
-        {image === null ? (
-          <DocumentUpContainer onPress={pickImage}>
-            <DocumentUpText>Nenhum Documento</DocumentUpText>
-          </DocumentUpContainer>
-        ) : (
-          <DocumentDownContainer>
-            <DocumentDownText>Documento da operacao </DocumentDownText>
-            <DocumentDownIcon
-              onPress={() => {
-                setImage(null);
-              }}
-            >
+          <F.Input label="Observacao" numberOfLines={4} />
+          {image === null ? (
+            <DocumentUpContainer onPress={pickImage}>
+              <DocumentUpText>Nenhum Documento</DocumentUpText>
+            </DocumentUpContainer>
+          ) : (
+            <DocumentDownContainer>
+              <DocumentDownText>Documento da operacao </DocumentDownText>
+              <DocumentDownIcon
+                onPress={() => {
+                  setImage(null);
+                }}
+              >
+                <MaterialCommunityIcons
+                  name="delete"
+                  size={24}
+                  color={theme.text}
+                />
+              </DocumentDownIcon>
+            </DocumentDownContainer>
+          )}
+          <Calendar.List />
+          <Categories.List />
+          <BankAccount.Modal />
+          <Keyboard.Render />
+          <Recurrent />
+        </Container>
+      </Wrapper>
+      <React.Fragment>
+        <ActionsContainer>
+          <Actions>
+            <ButtonSave>
+              <Octicons name="check" size={24} color="white" />
+            </ButtonSave>
+
+            <ButtonCancel onPress={() => handleToggleCash()}>
               <MaterialCommunityIcons
-                name="delete"
+                name="window-close"
                 size={24}
-                color={theme.text}
+                color="white"
               />
-            </DocumentDownIcon>
-          </DocumentDownContainer>
-        )}
-      </Container>
-      <Calendar.List />
-      <Categories.List />
-      <BankAccount.Modal />
-      <Keyboard.Render />
-      <Recurrent />
-      <ActionsContainer>
-        <ButtonSave>
-          <Octicons name="check" size={24} color="white" />
-        </ButtonSave>
-
-        <ButtonCancel onPress={() => onClose(true)}>
-          <MaterialCommunityIcons name="window-close" size={24} color="white" />
-        </ButtonCancel>
-      </ActionsContainer>
+            </ButtonCancel>
+          </Actions>
+        </ActionsContainer>
+      </React.Fragment>
     </>
   );
 }

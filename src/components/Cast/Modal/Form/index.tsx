@@ -12,18 +12,15 @@ import { CastContext } from "../../Context";
 export default function () {
   const theme = React.useContext(ThemeContext);
   const { handleToggleCastForm } = React.useContext(CastContext);
-  const { closed } = React.useContext(CashContext);
-
-  React.useEffect(() => {
-    if (closed === true) handleToggleCastForm();
-  }, [closed]);
+  const { show } = React.useContext(CashContext);
+  // React.useEffect(() => {
+  //   if (show === false) handleToggleCastForm();
+  // }, [show]);
   return (
-    <CastContext.Consumer>
-      {({ showForm }) => (
         <React.Fragment>
           <Modal
             deviceWidth={width}
-            isVisible={showForm}
+            isVisible={show}
             style={{
               margin: 0,
             }}
@@ -37,7 +34,6 @@ export default function () {
             </Wrapper>
           </Modal>
         </React.Fragment>
-      )}
-    </CastContext.Consumer>
+    
   );
 }

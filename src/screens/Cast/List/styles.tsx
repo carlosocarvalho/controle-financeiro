@@ -1,6 +1,5 @@
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
-import { StyledComponent, AnyStyledComponent } from "styled-components";
 
 export const Wrapper = styled.ScrollView`
   margin-bottom: 2px;
