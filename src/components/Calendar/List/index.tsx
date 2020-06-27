@@ -17,17 +17,18 @@ import { CalendarContainer, CalendarContent, CalendarBackdrop } from "./styles";
 import { CalendarContext } from "../Context";
 import { hasOnPressDown } from "../../../helpers/EventHelper";
 
-
 type CalendarDay = {
-  dateString: string,
-  day: number,
-  month: number,
-  timestamp: number,
-  year: number,
-}
+  dateString: string;
+  day: number;
+  month: number;
+  timestamp: number;
+  year: number;
+};
 const CA: React.FC = () => {
   const theme = React.useContext(ThemeContext);
-  const { handleToggleCalendar, handleCalendarSelected } = React.useContext(CalendarContext);
+  const { handleToggleCalendar, handleCalendarSelected } = React.useContext(
+    CalendarContext
+  );
 
   return (
     <CalendarContext.Consumer>
@@ -36,7 +37,7 @@ const CA: React.FC = () => {
           style={{ margin: 0 }}
           deviceWidth={width}
           isVisible={show}
-          onBackdropPress={() => console.log("consle....")}
+          onBackdropPress={() => {}}
         >
           <CalendarContainer>
             <CalendarBackdrop
@@ -47,9 +48,8 @@ const CA: React.FC = () => {
             <CalendarContent>
               <CalendarList
                 onDayPress={(day: CalendarDay) => {
-                  handleCalendarSelected(day.dateString)
+                  handleCalendarSelected(day.dateString);
                   handleToggleCalendar();
-                    
                 }}
                 horizontal={true}
                 pagingEnabled={true}

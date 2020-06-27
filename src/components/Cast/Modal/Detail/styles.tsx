@@ -11,3 +11,7 @@ export const Backdrop = styled.TouchableOpacity.attrs(() => ({
 }))`
   flex: 1;
 `;
+export const Content = styled.View` 
+   flex:1;
+   
+`

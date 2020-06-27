@@ -1,13 +1,16 @@
 import styled from "styled-components/native";
 
 export const Content = styled.View`
-  min-height: 350px;
+  flex: 1;
   width: 100%;
   background: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 `;
 
 export const Header = styled.View`
   padding: 25px;
+  padding-bottom: 16px;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
@@ -22,7 +25,7 @@ export const HeaderContent = styled.View`
 `;
 
 export const Body = styled.View`
-  padding:0 25px;
+  padding:0px 25px;
 `;
 
 export const Title = styled.Text`
@@ -50,9 +53,7 @@ export const Icon = styled.TouchableOpacity`
   justify-content: center;
 `;
 
-export const Box = styled.View`
-
-`;
+export const Box = styled.View``;
 
 export const BoxHeader = styled.View``;
 

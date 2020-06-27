@@ -12,20 +12,20 @@ import { CastProvider } from "../../components/Cast/Context";
 export default function () {
   const theme = React.useContext(ThemeContext);
   return (
-    <CastProvider>
+    
       <Wrapper>
         <Header colors={theme.header.background}>
           <HeaderContainer>
             <Title>Resumo Financeiro</Title>
           </HeaderContainer>
         </Header>
-
         <Container>
           <PeriodicChart />
           <MonthChart />
         </Container>
+        
       </Wrapper>
-      <Cast.Modal />
-    </CastProvider>
+     
+    
   );
 }

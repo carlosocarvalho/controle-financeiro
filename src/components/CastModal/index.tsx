@@ -74,7 +74,7 @@ export default function () {
     BankAccountContext
   );
 
-  const { handleToggleCash } = React.useContext(CashContext);
+  const { handleToggleCash, onClose } = React.useContext(CashContext);
   const { handleToggleShow, value } = React.useContext(KeyboardContext);
   const { handleToggleRecurrent, recurrent } = React.useContext(
     RecurrentContext
@@ -239,7 +239,7 @@ export default function () {
           <Octicons name="check" size={24} color="white" />
         </ButtonSave>
 
-        <ButtonCancel onPress={handleToggleCash}>
+        <ButtonCancel onPress={() => onClose(true)}>
           <MaterialCommunityIcons name="window-close" size={24} color="white" />
         </ButtonCancel>
       </ActionsContainer>

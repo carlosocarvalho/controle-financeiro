@@ -19,7 +19,10 @@ import {
   ButtonSearchSearch,
   Content,
 } from "./styles";
-import List from ".";
+import List from "../../List";
+
+import Detail from "../Detail";
+import Form from '../Form'
 
 const items = [
   {
@@ -96,7 +99,6 @@ const Cast: React.FC = () => {
     return a;
   }, {});
 
-
   React.useEffect(() => {
     setData(expandGroup(group));
   }, []);
@@ -123,6 +125,7 @@ const Cast: React.FC = () => {
             </Header>
             <Content>
               <List data={!!data && data} />
+              <Detail />
             </Content>
           </Container>
         </Modal>

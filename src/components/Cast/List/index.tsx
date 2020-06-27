@@ -10,7 +10,7 @@ type ListProps = {
 const List: React.FC<ListProps> = ({ data }) => {
   return (
     <Container>
-      {!!data && data.map((item: ItemProps) => <Item key={String(Math.random())} {...item} />)}
+      {!!data && data.map((item: ItemProps) => <Item key={String(Math.random())} data={item} />)}
     </Container>
   );
 };

@@ -25,43 +25,39 @@ export type ItemProps = {
   isUp: boolean;
 };
 
-const Item: React.FC<ItemProps> = ({
-  title,
-  account,
-  type,
-  isHeader,
-  isUp,
-  value,
-  paid,
-}) => {
+type RowProps = {
+  data: ItemProps;
+};
+
+const Item: React.FC<RowProps> = ({ data }) => {
   const theme = React.useContext(ThemeContext);
-  const { handleToggleCastDetail} = React.useContext(CastContext)
+  const { handleToggleCastDetail, setCurrenCast } = React.useContext(CastContext);
   return (
     <React.Fragment>
-      {isHeader ? (
-        <Head>{title}</Head>
+      {data.isHeader ? (
+        <Head>{data.title}</Head>
       ) : (
-        <Container 
-        
-        onPress={() => {
-          handleToggleCastDetail()
-        }}
+        <Container
+          onPress={() => {
+            setCurrenCast(data)
+            handleToggleCastDetail();
+          }}
         >
           <Feather
             size={20}
-            name={isUp ? "arrow-up" : "arrow-down"}
-            color={isUp ? theme.secondary : theme.danger}
+            name={data.isUp ? "arrow-up" : "arrow-down"}
+            color={data.isUp ? theme.secondary : theme.danger}
           />
           <Content>
-            <Title>{title}</Title>
-            <Label>{!!account && account} </Label>
+            <Title>{data.title}</Title>
+            <Label>{!!data.account && data.account} </Label>
           </Content>
           <PriceContent>
-            <Price>{value}</Price>
+            <Price>{data.value}</Price>
             <Feather
               size={20}
-              name={paid ? "thumbs-up" : "thumbs-down"}
-              color={paid ? theme.secondary : theme.light}
+              name={data.paid ? "thumbs-up" : "thumbs-down"}
+              color={data.paid ? theme.secondary : theme.light}
             />
           </PriceContent>
         </Container>
@@ -71,8 +67,7 @@ const Item: React.FC<ItemProps> = ({
 };
 
 Item.defaultProps = {
-  isHeader: false,
-  isUp: true,
+  data: { isHeader: false, isUp: true } as ItemProps,
 };
 
 export default Item;

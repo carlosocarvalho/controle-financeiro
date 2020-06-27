@@ -13,41 +13,42 @@ import { Wrapper } from "./styles";
 import { KeyboardProvider } from "../../../components/Keyboard/Context";
 import { RecurrentProvider } from "../../../components/Recurrent/Context";
 
-const { width } = Dimensions.get("screen");
+const { width, height } = Dimensions.get("screen");
+
+import FormConsumer from "../../../components/Cast/Form";
 
 export default function () {
   const theme = React.useContext(ThemeContext);
+  const [visible, setVisible] = React.useState(false)
+  const { show } = React.useContext(CashContext)
+  React.useEffect(() => { 
+     setVisible(show)
+  }, [show])
   return (
-    <CashContext.Consumer>
-      {({ show }) => (
+    // <CashContext.Consumer>
+    //   {({ show }) => (
         <React.Fragment>
           <Modal
             style={{
               margin: 0,
+              position: "absolute",
+              zIndex: 20000,
+              width: "100%",
+              height: height,
             }}
             deviceWidth={width}
-            isVisible={show}
+            isVisible={visible}
           >
             <StatusBar
               backgroundColor={theme.primary}
               barStyle="light-content"
             />
             <Wrapper>
-              <CategorieProvider>
-                <CalendarProvider>
-                  <BankAccountProvider>
-                    <KeyboardProvider>
-                      <RecurrentProvider>
-                        <CastModal />
-                      </RecurrentProvider>
-                    </KeyboardProvider>
-                  </BankAccountProvider>
-                </CalendarProvider>
-              </CategorieProvider>
+              <FormConsumer />
             </Wrapper>
           </Modal>
         </React.Fragment>
-      )}
-    </CashContext.Consumer>
+    //   )}
+    // </CashContext.Consumer>
   );
 }

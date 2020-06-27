@@ -7,14 +7,20 @@ interface CastContextProps {
   value?: string | null;
   showDetail: boolean;
   handleToggleCastDetail(): void;
+  setCurrenCast(value: any): void;
+  current?: object | null;
+  showForm: boolean
+  handleToggleCastForm(): void;
 }
 
 export const CastContext = React.createContext({} as CastContextProps);
 
 export const CastProvider: React.FC = ({ children }) => {
-  const [show, setShow] = React.useState(true);
+  const [show, setShow] = React.useState(false);
   const [showDetail, setDetailShow] = React.useState(false);
+  const [showForm, setForm] = React.useState(false);
   const [value, setValue] = React.useState<string | null>(null);
+  const [current, setCurrent] = React.useState<object | null>(null);
 
   function handleToggleCast() {
     setShow((s) => !s);
@@ -23,8 +29,16 @@ export const CastProvider: React.FC = ({ children }) => {
     setValue(value);
   }
 
-  function handleToggleCastDetail(){
-    setDetailShow(s => !s)
+  function setCurrenCast(value: object | null) {
+    setCurrent(value);
+  }
+
+  function handleToggleCastDetail() {
+    setDetailShow((s) => !s);
+  }
+
+  function  handleToggleCastForm() {
+    setForm((s) => !s);
   }
   return (
     <CastContext.Provider
@@ -34,7 +48,11 @@ export const CastProvider: React.FC = ({ children }) => {
         setCast,
         value,
         handleToggleCastDetail,
-        showDetail
+        showDetail,
+        current,
+        setCurrenCast,
+        handleToggleCastForm,
+        showForm
       }}
     >
       {children}

@@ -8,28 +8,32 @@ import ModalFormContext from "./contexts/ModalFormContext";
 import CastModal from "./components/CastModal";
 import { useModalForm } from "./hooks/ModalFormHook";
 import { CashProvider } from "./components/CastModal/Context";
-import Cast from "./screens/Cast";
+import ScreenCast from "./screens/Cast";
 import light from "./themes/light";
+import { CastProvider } from "./components/Cast/Context";
+import Cast from './components/Cast'
 
 export default function () {
   const p = useModalForm();
   const theme = light[Platform.OS];
-  
 
   return (
     <ModalFormContext.Provider value={p}>
       <ThemeProvider theme={{ ...theme, plaform: Platform.OS }}>
         <CashProvider>
-          <React.Fragment>
-            <StatusBar
-              backgroundColor={theme.primary}
-              barStyle="light-content"
-            />
-            <NavigationContainer>
-              <Navigation />
-            </NavigationContainer>
-            <Cast.Form />
-          </React.Fragment>
+          <CastProvider>
+            <React.Fragment>
+              <StatusBar
+                backgroundColor={theme.primary}
+                barStyle="light-content"
+              />
+              <NavigationContainer>
+                <Navigation />
+              </NavigationContainer>
+              <ScreenCast.Form />
+              <Cast.Modal />
+            </React.Fragment>
+          </CastProvider>
         </CashProvider>
       </ThemeProvider>
     </ModalFormContext.Provider>

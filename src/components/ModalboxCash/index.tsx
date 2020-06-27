@@ -14,11 +14,14 @@ import {
   Body,
 } from "./styles";
 import SvgCashItem from "../Icons/Cash";
+import { CashContext } from "../CastModal/Context";
 
 type Props = {
-  data?: Object;
+  data?: object;
+  onSelect?: Function 
 };
-export default function BoxCash<Props>({ data }) {
+const BoxCash: React.FC<Props> = ({ data , onSelect}) => {
+  // const { handleToggleCash } = React.useContext(CashContext)
   return (
     <Content>
       <Header>
@@ -31,7 +34,9 @@ export default function BoxCash<Props>({ data }) {
           <Value>R$ 56,00</Value>
         </HeaderContent>
 
-        <Icon>
+        <Icon onPress={()=>{
+          onSelect(data)
+        }}>
           <FontAwesome name="pencil" color="#999" size={15} />
         </Icon>
       </Header>
@@ -54,3 +59,8 @@ export default function BoxCash<Props>({ data }) {
     </Content>
   );
 }
+
+BoxCash.defaultProps = {
+  onSelect: () => {}
+}
+export default BoxCash
