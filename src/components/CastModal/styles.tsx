@@ -1,29 +1,24 @@
 import styled from "styled-components/native";
+import ThemeContract from "../../themes/@types";
 
 export const Wrapper = styled.View`
-
-flex: 1;
-`
+  flex: 1;
+`;
 
 export const Container = styled.ScrollView.attrs(() => ({
-  contentContainerStyle: {
-  
-    
-  },
+  contentContainerStyle: {},
   contentContainer: {
     paddingVertical: 20,
-    
-  }
-}))`
-`;
+  },
+}))``;
 
 type StyledProps = {
   props: any;
 };
 
 export const Header = styled.View`
-  height: ${({ theme }) => theme.header.cast.height};
-  background: ${({ theme }) => theme.primary};
+  height: ${({ theme }: ThemeContract) => theme.header.cast.height};
+  background: ${({ theme }: ThemeContract) => theme.primary};
 `;
 
 export const HeaderContent = styled.SafeAreaView`
@@ -64,7 +59,7 @@ export const KeyboardContent: React.FC<StyledProps | any> = styled.View`
   background-color: #fff;
   width: 100%;
   align-items: center;
-  height: ${({ screenHeight }) => screenHeight}px;
+  height: ${({ screenHeight }: any) => screenHeight}px;
 `;
 
 export const ButtonCloseKeyBoard = styled.TouchableOpacity`
@@ -84,13 +79,13 @@ export const DocumentUpContainer = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   align-self: center;
-  margin-top: ${({ theme }) => theme.sizes.spacing};
-  margin-bottom: ${({ theme }) => theme.sizes.spacing};
+  margin-top: ${({ theme }: ThemeContract) => theme.sizes.spacing};
+  margin-bottom: ${({ theme }: ThemeContract) => theme.sizes.spacing};
 `;
 
 export const DocumentUpText = styled.Text`
   font-weight: bold;
-  color: ${({ theme }) => theme.form.label.color};
+  color: ${({ theme }: ThemeContract) => theme.form.label.color};
 `;
 
 export const DocumentDownContainer = styled.View`
@@ -99,56 +94,53 @@ export const DocumentDownContainer = styled.View`
   border-radius: 5px;
   height: 60px;
   width: 95%;
-  background-color: ${({ theme }) => theme.secondary};
+  background-color: ${({ theme }: ThemeContract) => theme.secondary};
   justify-content: space-between;
   align-items: center;
   align-self: center;
-  margin-top: ${({ theme }) => theme.sizes.spacing};
-  margin-left: ${({ theme }) => theme.sizes.spacing};
-  margin-right: ${({ theme }) => theme.sizes.spacing};
+  margin-top: ${({ theme }: ThemeContract) => theme.sizes.spacing};
+  margin-left: ${({ theme }: ThemeContract) => theme.sizes.spacing};
+  margin-right: ${({ theme }: ThemeContract) => theme.sizes.spacing};
 
-  padding-left: ${({ theme }) => theme.sizes.spacing};
-  padding-right: ${({ theme }) => theme.sizes.spacing};
-  margin-bottom: ${({ theme }) => theme.sizes.spacing};
+  padding-left: ${({ theme }: ThemeContract) => theme.sizes.spacing};
+  padding-right: ${({ theme }: ThemeContract) => theme.sizes.spacing};
+  margin-bottom: ${({ theme }: ThemeContract) => theme.sizes.spacing};
 `;
 
 export const DocumentDownText = styled.Text`
   font-weight: bold;
-  color: ${({ theme }) => theme.white};
+  color: ${({ theme }: ThemeContract) => theme.white};
 `;
 
 export const DocumentDownIcon = styled.TouchableOpacity.attrs(() => ({
   activeOpacity: 0.7,
 }))`
-  margin-left: ${({ theme }) => theme.sizes.spacing};
+  margin-left: ${({ theme }: ThemeContract) => theme.sizes.spacing};
 `;
 
 export const ButtonSave = styled.TouchableOpacity`
-  background-color: ${({ theme }) => theme.secondary};
+  background-color: ${({ theme }: ThemeContract) => theme.secondary};
   height: 46px;
   width: 46px;
   align-items: center;
   justify-content: center;
   border-radius: 23px;
-  margin-right: ${({ theme }) => theme.sizes.spacing};
+  margin-right: ${({ theme }: ThemeContract) => theme.sizes.spacing};
 `;
 
 export const ActionsContainer = styled.SafeAreaView`
-
-
-    height: ${({theme}) => theme.cast.footer.actions.height};
-  
+  height: ${({ theme }: ThemeContract) => theme.cast.footer.actions.height};
 `;
 
 export const Actions = styled.View`
   align-items: center;
-  padding: ${({ theme }) => theme.sizes.spacing};
+  padding: ${({ theme }: ThemeContract) => theme.sizes.spacing};
   flex-direction: row;
-  justify-content: center;  
+  justify-content: center;
 `;
 
 export const ButtonCancel = styled.TouchableOpacity`
-  background-color: ${({ theme }) => theme.danger};
+  background-color: ${({ theme }: ThemeContract) => theme.danger};
   height: 46px;
   width: 46px;
   align-items: center;
@@ -170,7 +162,7 @@ export const OptionContainer = styled.View`
 export const OptionType = styled.TouchableOpacity.attrs(() => ({
   activeOpacity: 0.7,
 }))`
-  padding: ${({ theme }) => theme.sizes.spacing};
+  padding: ${({ theme }: ThemeContract) => theme.sizes.spacing};
   padding-right: 10px;
   flex-direction: row;
   align-items: center;
@@ -184,6 +176,6 @@ export const OptionActive = styled.View`
   width: 8px;
   height: 8px;
   border-radius: 4px;
-  background: ${({ backgroundColor }) => backgroundColor};
+  background: ${({ backgroundColor }: any) => backgroundColor};
   margin-right: 10px;
 `;

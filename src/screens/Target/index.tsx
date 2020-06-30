@@ -1,9 +1,37 @@
+import React from "react";
+import { ThemeContext } from "styled-components";
+import { Feather } from "@expo/vector-icons";
 
-import List from './List';
-import Form  from './Form' 
+import {
+  Wrapper,
+  Header,
+  HeaderContainer,
+  Title,
+  Container,
+  ButtonAdd,
+} from "./styles";
 
+import Target from "../../components/Target";
+import { DepositContext } from "../../components/Target/Context/DepositContext";
 
-export default {
-    List,
-    Form
-}
+const TargetScreen: React.FC = () => {
+  const theme = React.useContext(ThemeContext);
+  const { handleShowForm } = React.useContext(DepositContext);
+  return (
+    <Wrapper>
+      <Header colors={theme.header.background}>
+        <HeaderContainer>
+          <Title>Objetivos</Title>
+          <ButtonAdd onPress={handleShowForm}>
+            <Feather name="plus" size={24} color={theme.header.color} />
+          </ButtonAdd>
+        </HeaderContainer>
+      </Header>
+      <Container>
+        <Target.List />
+      </Container>
+    </Wrapper>
+  );
+};
+
+export default TargetScreen;

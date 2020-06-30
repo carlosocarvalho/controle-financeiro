@@ -63,7 +63,7 @@ export default function Home() {
       <Notification />
       <BankAccount.List />
       <CreditCard.List />
-      <Target.List />
+      <Target.Resume />
 
       
     </Wrapper>

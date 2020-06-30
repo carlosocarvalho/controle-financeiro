@@ -13,9 +13,7 @@ import Cast from "../../components/Cast";
 export default function () {
   const theme = React.useContext(ThemeContext);
   // const c = React.useContext(CastContext);
-  React.useEffect(() => {
-    
-  }, []);
+ 
   return (
     <Wrapper>
       <Header colors={theme.header.background}>

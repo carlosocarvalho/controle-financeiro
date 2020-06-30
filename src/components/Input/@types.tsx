@@ -4,6 +4,7 @@ export interface TextInputProps {
   label: string;
   placeholder?: string;
   icon?: IconInputProps;
+  border?: boolean
 }
 
 export type TouchInputProps = {
@@ -11,7 +12,8 @@ export type TouchInputProps = {
   value: any,
   placeholder?: string,
   icon?: IconInputProps | null | undefined,
-  onPress?: Function
+  onPress?: Function,
+  border: false
 }
 
 export type IconInputProps = {
@@ -19,4 +21,5 @@ export type IconInputProps = {
   lib: any | undefined,
   color?: string | null | undefined,
   size?: number
+ 
 };

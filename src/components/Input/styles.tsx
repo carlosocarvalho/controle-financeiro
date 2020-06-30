@@ -8,18 +8,18 @@ export const Label = styled.Text`
   padding-top: ${({ theme }) => theme.sizes.spacing};
   padding-left: ${({ theme }) => theme.sizes.spacing};
   padding-right: ${({ theme }) => theme.sizes.spacing};
-  
+
   font-size: ${({ theme }) => theme.sizes.text.normal};
   font-weight: 700;
   color: ${({ theme }) => theme.form.label.color};
 `;
 
 export const Input = styled.TextInput`
-  
-  border-bottom-width: 1px; 
+  border-bottom-width: 1px;
   border-bottom-color: ${({ theme }) => theme.form.input.borderColor};
-  padding: ${({ theme }) => theme.form.input.paddingVertical} ${({ theme }) => theme.sizes.spacing};
-  
+  padding: ${({ theme }) => theme.form.input.paddingVertical}
+    ${({ theme }) => theme.sizes.spacing};
+
   font-size: ${({ theme }) => theme.sizes.text.medium};
   font-weight: 700;
   color: ${({ theme }) => theme.form.input.color};
@@ -29,7 +29,7 @@ export const Input = styled.TextInput`
 export const ViewInput = styled.View`
   border-bottom-width: 1px;
   border-bottom-color: ${({ theme }) => theme.form.input.borderColor};
-  padding:5px ${({ theme }) => theme.sizes.spacing};
+  padding: 5px ${({ theme }) => theme.sizes.spacing};
   flex-direction: row;
   align-items: center;
 `;

@@ -11,7 +11,7 @@ import Modal from "react-native-modal";
 import Home from "./screens/Home";
 import Cast from "./screens/Cast";
 import CastResume from "./screens/CastResume";
-import Target from "./screens/Target";
+import TargetScreen from "./screens/Target";
 import CastButton from "./components/CastButton";
 
 const Tab = createBottomTabNavigator();
@@ -62,7 +62,7 @@ const screens = [
   },
   {
     name: "Target",
-    component: Target.List,
+    component: TargetScreen,
     key: String(Math.random()),
     title: "Metas",
   },
@@ -71,7 +71,7 @@ export default function Navigation() {
   const theme = React.useContext(ThemeContext);
   return (
     <Tab.Navigator
-      initialRouteName="Cast"
+      initialRouteName="Target"
       tabBarOptions={{
         activeTintColor: theme.primary,
         inactiveTintColor: theme.light,

@@ -7,9 +7,11 @@ import sizes from "./sizes";
 import form from "./form";
 import keyboard from "./keyboard";
 import cast from "./cast";
+import target from "./target";
 
 export default {
   android: {
+    ...{ target: target.android },
     rawSizes: sizes.android,
     ...colors,
     ...{ header: header.android },
@@ -37,6 +39,7 @@ export default {
   },
 
   ios: {
+    ...{ target: target.ios },
     rawSizes: sizes.ios,
     ...colors,
     ...{ header: header.ios },
