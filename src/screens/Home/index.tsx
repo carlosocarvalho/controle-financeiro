@@ -31,7 +31,7 @@ export default function Home() {
   const toggleVisible = () => setVisible((prev) => !prev);
   return (
     <Wrapper>
-      <FocusAwareStatusBar barStyle="light-content" backgroundColor="#6a51ae" />
+      <FocusAwareStatusBar barStyle="light-content" backgroundColor="#2B1E55" />
       <Header  colors={theme.header.background}>
         <HeaderContainer>
           <UserContainer>

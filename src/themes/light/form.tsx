@@ -6,6 +6,7 @@ export default {
       borderColor: colors.gray,
       color: colors.text,
       paddingVertical: '0px',
+      height: '35px'
     },
     label: {
       borderColor: colors.light,
@@ -17,6 +18,7 @@ export default {
       borderColor: colors.gray,
       color: colors.text,
       paddingVertical: '10px',
+      height: '40px'
     },
     label: {
       borderColor: colors.light,

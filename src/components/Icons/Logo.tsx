@@ -3,7 +3,7 @@ import Svg, { Defs, Path, Use, G } from "react-native-svg";
 
 function Logo(props: any) {
   return (
-    <Svg  viewBox="0 0 200 200" width={200} height={200} {...props}>
+    <Svg  viewBox="0 0 215 200" width={200} height={200} {...props}>
       <Defs>
         <Path
           d="M88.91 37.74l-3.37 21.6-16.08 21.6-23.07 7.24-22.4-7.24 31.25-43.2h33.67z"

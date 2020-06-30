@@ -73,7 +73,7 @@ export default function () {
     <CastContext.Consumer>
       {() => (
         <>
-        <FocusAwareStatusBar barStyle="light-content" backgroundColor="#6a51ae" />
+        <FocusAwareStatusBar barStyle="light-content" backgroundColor="#2B1E55" />
           <Header ios={Platform.OS === "ios"} colors={theme.header.background}>
             <HeaderContainer>
               <HeaderTitle>Lancamentos</HeaderTitle>

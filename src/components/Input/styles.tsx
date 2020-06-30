@@ -18,13 +18,11 @@ export const Label = styled.Text`
 export const Input = styled.TextInput`
   border-bottom-width: 1px;
   border-bottom-color: ${({ theme }: any) => theme.form.input.borderColor};
-  padding: ${({ theme }: any) => theme.form.input.paddingVertical}
-    ${({ theme }: ThemeContract) => theme.sizes.spacing};
-
+  padding: ${({ theme }: any) => theme.form.input.paddingVertical} ${({ theme }: ThemeContract) => theme.sizes.spacing};
   font-size: ${({ theme }: ThemeContract) => theme.sizes.text.medium};
   font-weight: 700;
   color: ${({ theme }: ThemeContract) => theme.form.input.color};
-  height: 40px;
+  height: ${({ theme }: ThemeContract) => theme.form.input.height};
 `
 
 export const ViewInput = styled.View`
