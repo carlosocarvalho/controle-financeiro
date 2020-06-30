@@ -13,12 +13,14 @@ import {
 
 import Target from "../../components/Target";
 import { DepositContext } from "../../components/Target/Context/DepositContext";
+import FocusAwareStatusBar from "../../components/FocusAwareStatusBar";
 
 const TargetScreen: React.FC = () => {
   const theme = React.useContext(ThemeContext);
   const { handleShowForm } = React.useContext(DepositContext);
   return (
     <Wrapper>
+      <FocusAwareStatusBar barStyle="light-content" backgroundColor="#6a51ae" />
       <Header colors={theme.header.background}>
         <HeaderContainer>
           <Title>Objetivos</Title>

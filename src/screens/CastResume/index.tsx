@@ -7,6 +7,7 @@ import MonthChart from "../../components/Chart/Month";
 import PeriodicChart from "../../components/Chart/Periodic";
 
 import Cast from "../../components/Cast";
+import FocusAwareStatusBar from "../../components/FocusAwareStatusBar";
 
 // import { CashContext } from "../../components/CastModal/Context";
 
@@ -16,6 +17,7 @@ export default function () {
  
   return (
     <Wrapper>
+      <FocusAwareStatusBar barStyle="light-content" backgroundColor="#6a51ae" />
       <Header colors={theme.header.background}>
         <HeaderContainer>
           <Title>Resumo Financeiro</Title>

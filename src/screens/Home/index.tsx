@@ -20,6 +20,7 @@ import Notification from "../../components/Notification";
 import BankAccount  from "../../components/BankAccount"
 import CreditCard from "../../components/CreditCard";
 import Target from "../../components/Target";
+import FocusAwareStatusBar from "../../components/FocusAwareStatusBar";
 
 
 const avatar = require("../../images/avatar.png");
@@ -30,6 +31,7 @@ export default function Home() {
   const toggleVisible = () => setVisible((prev) => !prev);
   return (
     <Wrapper>
+      <FocusAwareStatusBar barStyle="light-content" backgroundColor="#6a51ae" />
       <Header  colors={theme.header.background}>
         <HeaderContainer>
           <UserContainer>

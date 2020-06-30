@@ -30,6 +30,7 @@ const items = require("./data.json");
 import Cast from "../../../components/Cast";
 import { formatMoney } from "../../../helpers/MoneyFormat";
 import { CastContext } from "../../../components/Cast/Context";
+import FocusAwareStatusBar from "../../../components/FocusAwareStatusBar";
 
 
 const expandGroup = (data: any) => {
@@ -72,6 +73,7 @@ export default function () {
     <CastContext.Consumer>
       {() => (
         <>
+        <FocusAwareStatusBar barStyle="light-content" backgroundColor="#6a51ae" />
           <Header ios={Platform.OS === "ios"} colors={theme.header.background}>
             <HeaderContainer>
               <HeaderTitle>Lancamentos</HeaderTitle>

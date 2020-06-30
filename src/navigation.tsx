@@ -1,12 +1,13 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import {
   AntDesign,
   Ionicons,
   MaterialCommunityIcons as Icon,
 } from "@expo/vector-icons";
 import { ThemeContext } from "styled-components";
-import Modal from "react-native-modal";
+
 
 import Home from "./screens/Home";
 import Cast from "./screens/Cast";
@@ -14,7 +15,9 @@ import CastResume from "./screens/CastResume";
 import TargetScreen from "./screens/Target";
 import CastButton from "./components/CastButton";
 
+
 const Tab = createBottomTabNavigator();
+
 
 const icons = {
   Home: {
@@ -67,11 +70,11 @@ const screens = [
     title: "Metas",
   },
 ];
-export default function Navigation() {
+const  Navigation = () => {
   const theme = React.useContext(ThemeContext);
   return (
     <Tab.Navigator
-      initialRouteName="Target"
+      // initialRouteName="Target"
       tabBarOptions={{
         activeTintColor: theme.primary,
         inactiveTintColor: theme.light,
@@ -110,3 +113,7 @@ export default function Navigation() {
     </Tab.Navigator>
   );
 }
+
+
+
+export default Navigation

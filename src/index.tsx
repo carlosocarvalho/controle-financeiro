@@ -1,22 +1,26 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
 import Navigation from "./navigation";
 import { StatusBar, Platform } from "react-native";
 import { ThemeProvider } from "styled-components";
-
 import ModalFormContext from "./contexts/ModalFormContext";
-import CastModal from "./components/CastModal";
 import { useModalForm } from "./hooks/ModalFormHook";
 import { CashProvider } from "./components/CastModal/Context";
 import ScreenCast from "./screens/Cast";
 import light from "./themes/light";
 import { CastProvider } from "./components/Cast/Context";
-import Cast from "./components/Cast";
 import { DepositProvider } from "./components/Target/Context/DepositContext";
+
+import Screens from "./screens";
+
+const Stack = createStackNavigator();
 
 export default function () {
   const p = useModalForm();
-  const theme = light[Platform.OS];
+  const theme: any = light[Platform.OS];
+
   return (
     <ModalFormContext.Provider value={p}>
       <ThemeProvider theme={{ ...theme, plaform: Platform.OS }}>
@@ -24,12 +28,12 @@ export default function () {
           <CastProvider>
             <DepositProvider>
               <React.Fragment>
-                <StatusBar
-                  backgroundColor={theme.primary}
-                  barStyle="light-content"
-                />
                 <NavigationContainer>
-                  <Navigation />
+                  {/* <Navigation /> */}
+                  <Stack.Navigator headerMode="none">
+                    <Stack.Screen name="Auth" component={Screens.Login} />
+                    <Stack.Screen name="App" component={Navigation} />
+                  </Stack.Navigator>
                 </NavigationContainer>
                 <ScreenCast.Form />
                 {/* <Cast.Modal /> */}
