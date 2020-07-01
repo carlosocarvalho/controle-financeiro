@@ -2,7 +2,11 @@
 
 Meu controle financeiro, um aplicativo financeiro para quem busca ajustar o controle financeiro pessoal.
 
-##Screens Tests APP
+### Screens Tests 
 
-![Screen finance App](app-finance-control.gif | width=200)
+- [x] IOS 11
+- [x] IOS 5 plus
+- [x] Android 8
+
+<img src="app-finance-control.gif" width="200px" />
 
