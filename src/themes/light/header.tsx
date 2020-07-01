@@ -7,10 +7,14 @@ export default {
     color: colors.white,
     title: "bold",
     titleSize: `${sizes.android.large}px`,
+
+    profile: {
+      height: "auto",
+    },
     cast: {
       height: "130px",
       rawHeight: 160,
-      componentList: '60px'
+      componentList: "60px",
     },
 
     home: {
@@ -29,19 +33,21 @@ export default {
     screen: {
       resume: {
         height: "60px",
-      }
-    }
+      },
+    },
   },
   ios: {
     background: ["#2B1E55", "#191035"],
     color: colors.white,
     title: "bold",
     titleSize: `${sizes.ios.large}px`,
+    profile: {
+      height: "auto",
+    },
     cast: {
       height: "160px",
       rawHeight: 160,
-      componentList: '100px',
-     
+      componentList: "100px",
     },
     home: {
       height: "200px",
@@ -59,7 +65,7 @@ export default {
     screen: {
       resume: {
         height: "90px",
-      }
-    }
+      },
+    },
   },
 };
